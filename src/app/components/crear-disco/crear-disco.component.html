@@ -1,0 +1,47 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class= "col-lg-6 offset-lg-3">
+            <div class= "card">
+                <div class= "card-body text-center">
+                    <span class="titulo"> {{titulo | uppercase}}</span>
+                    <form class="mt-5"[formGroup]="discoForm" (ngSubmit)="agregarDisco()">
+                        <div class="mb-3">
+
+                            <input type="text" formControlName="artista" class="form-control form-control-lg" placeholder="Artista">
+                            
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="album" class="form-control form-control-lg" placeholder="Album">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="año" class="form-control form-control-lg" placeholder="Año">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="categoria" class="form-control form-control-lg" placeholder="Categoría">
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="estado" class="form-control form-control-lg" placeholder="Estado">
+                        </div>
+                        <div class="mb-3">
+                            <input type="number" formControlName="precio" class="form-control form-control-lg" placeholder="Precio">
+                        </div>
+
+                       
+                        <form enctype="multipart/form-data" action="uploader.php" method="POST">
+                            <input name="uploadedfile" type="file" />
+                            <input type="submit" value="Subir archivo" />
+                        </form>
+
+
+                        <div class="mb-3 mt-3">
+                            <button routerLink="/listar-disco" class="btn btn-secondary btn-lg float-start btn-sm">Atrás</button>
+                            <button type="submit" [disabled]="discoForm.invalid" class="btn btn-success btn-lg float-end btn-sm">Agregar</button>
+                        </div>
+                    </form>
+                         
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
