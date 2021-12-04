@@ -8,7 +8,7 @@ import { Disco } from '../models/disco';
   providedIn: 'root'
 })
 export class DiscoService {
-  url='http://localhost:3000/api/productos/';
+  url='/api/productos/';
 
   constructor(private http: HttpClient) {}
 
